@@ -1,9 +1,16 @@
-const input = document.querySelector('input')
+
 const btn = document.querySelector('.btn')
-const form = document.
+const form = document.querySelector('form')
 
-btn.addEventListener('click', (event) => {
+form.addEventListener('submit', (event)=>{
     event.preventDefault();
-    console.log(`I have just clicked the ${btn.innerText} button`)
-})
 
+    const input = document.querySelector('#message-input')
+    const encrypted = btoa(input.value)
+
+    const linkInput = document.querySelector('#link-input')
+    linkInput.value = `${window.location}#${encrypted}`;
+    linkInput.select()
+    
+
+});
